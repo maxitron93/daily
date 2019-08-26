@@ -1,0 +1,47 @@
+@import './base/settings';
+@import './base/base';
+
+* {
+  color: $off-black; // This is how to import variables from ./base/settings
+}
+
+.task-deadline-container {
+    margin-top: 10px;
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+}
+
+.task {
+    background-color: #29e;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    // margin: 30px 20px;
+    touch-action: none;
+    width: 120px;
+    height: 100px;
+}
+
+.deadline {
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-radius: 8px;
+    padding: 20px;
+    // margin: 30px 20px;
+    touch-action: none;
+    width: 120px;
+    height: 100px;
+}
+
+li {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background-color: green;
+    margin-top: 20px;
+}

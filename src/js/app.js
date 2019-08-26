@@ -26,46 +26,52 @@ elements.mainHeader.addEventListener('click', () => {
 
 
 
-const sortable = new Sortable(document.querySelector('.main-container'), {
-  draggable: '.task-deadline-container',
-  
-  // Start of additional code to enable animation on sortable:sorted
-  swapAnimation: {
-    duration: 200,
-	easingFunction: 'ease-in-out',
-  },
-  plugins: [Plugins.SwapAnimation]
-  // End of additional code to enable animation on sortable:sorted
+
+
+const sortable = new Sortable(elements.mainContainer, {
+	draggable: '.item',
+	
+	// Start of additional code to enable animation on sortable:sorted
+	swapAnimation: {
+		duration: 200,
+		easingFunction: 'ease-in-out',
+	},
+	plugins: [Plugins.SwapAnimation]
+	// End of additional code to enable animation on sortable:sorted
 });
 
 sortable.on('sortable:sort', (event) => {
-  // Hides the div that is selected upon selection
-  event.data.dragEvent.data.source.style.opacity = "0"
+	// Hides the div that is selected upon selection
+	event.data.dragEvent.data.source.style.opacity = "0"
+});
+
+sortable.on('sortable:stop', () => {
+	console.log('Add code here to adjust state')
 });
 
 // Start of code to cancel the drag event when a child element is selected
 sortable.on('drag:start', (event) => {
-  const currentTarget = event.originalEvent.target;
-  
-  if (isPrevented(currentTarget, ['task', 'deadline'])) {
-    event.cancel();
+	const currentTarget = event.originalEvent.target;
+	
+	if (isPrevented(currentTarget, ['btn-remove', 'color-picker', 'description','task', 'deadline'])) {
+		event.cancel();
   }
 });
 
 const isPrevented = (element, classesToPrevent) => {
-  let currentElem = element;
-  let isParent = false;
-  
-  while (currentElem) {
-    const hasClass = Array.from(currentElem.classList).some((cls) => classesToPrevent.includes(cls));
-    if (hasClass) {
-      isParent = true;
-      currentElem = undefined;
-    } else {
-      currentElem = currentElem.parentElement;
-    }
-  }
-  return isParent;
+	let currentElem = element;
+	let isParent = false;
+	
+	while (currentElem) {
+		const hasClass = Array.from(currentElem.classList).some((cls) => classesToPrevent.includes(cls));
+		if (hasClass) {
+		isParent = true;
+		currentElem = undefined;
+		} else {
+		currentElem = currentElem.parentElement;
+		}
+	}
+	return isParent;
 }
 // End of code to cancel the drag event when a child element is selected
 
@@ -73,7 +79,11 @@ const isPrevented = (element, classesToPrevent) => {
 
 
 
-
+const updateState = (target) => {
+	console.log('Add code here to update state')
+	console.log(`x-start: ${target.getAttribute('data-x')}`)
+	console.log(`width: ${target.offsetWidth}`)
+}
 
 
 
@@ -104,7 +114,10 @@ interact('.task')
 		interact.modifiers.restrictRect({
 			restriction: 'parent'
 		})
-		]
+		],
+		onend: function (event) {
+			updateState(event.target)
+		}
 	})
 	.resizable({
 		// enable snapping
@@ -136,6 +149,9 @@ interact('.task')
 			},
 		},
 		inertia: false, 
+		onend: function (event) {
+			updateState(event.target)
+		}
   })
   .on('resizemove', function (event) {
     var target = event.target
@@ -165,5 +181,9 @@ interact('.deadline')
       interact.modifiers.restrictRect({
         restriction: 'parent'
       })
-    ]
+	],
+	onend: function (event) {
+		console.log('Add code here to update state')
+		console.log(`x-start: ${event.target.getAttribute('data-x')}`)
+	}
   })

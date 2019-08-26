@@ -1,9 +1,9 @@
 ### Libraries
 - draggable
 https://shopify.github.io/draggable/
-- npm install @shopify/draggable --save-dev
+- npm install @shopify/draggable
 
 
 - interactjs
 https://interactjs.io/
-- npm install interactjs@next --save-dev
+- npm install interactjs

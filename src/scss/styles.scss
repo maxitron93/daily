@@ -2,7 +2,55 @@
 @import './base/base';
 
 * {
-  color: $off-black; // This is how to import variables from ./base/settings
+  color: $font-color-main; // This is how to import variables from ./base/settings
+}
+
+// ************************************************************ //
+// ***************** HEADER ***************** //
+// ************************************************************ //
+header {
+    display: flex;
+    align-items: flex-start;
+    background-color: #E9F3FF;
+    padding-left: 15px;
+}
+
+.hedaer-item {
+    margin: 15px 25px;
+}
+
+.hedaer-item__label {
+    // background-color: #fff;
+}
+
+.label-date {
+    text-align: end;
+}
+
+.label-btn {
+    text-align: center;
+}
+
+.hedaer-item__content {
+    // background-color: green;
+}
+
+.content-date {
+    font-size: 250%;
+}
+
+.content-btn {
+    margin-top: 5px;
+    width: 100px;
+    text-align: center;
+    border-radius: 2px;
+    background-color: #B5CEED;
+    padding: 5px 20px;
+
+    .hour,
+    .toggle {
+        font-size: 150%;
+    }
 }
 
 .item {

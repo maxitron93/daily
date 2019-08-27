@@ -32,7 +32,7 @@ const state = {
 
 
 
-const sortable = new Sortable(elements.mainContainer, {
+const sortable = new Sortable(elements.itemsContainer, {
 	draggable: '.item',
 	
 	// Start of additional code to enable animation on sortable:sorted

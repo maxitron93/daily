@@ -110,9 +110,13 @@ header {
         opacity: 0.7;
     }
 
-    &:hover .description {
+    &:hover .description-container {
         width: 215px;
         margin-left: 15px;
+    }
+
+    &:hover .description {
+        width: 215px;
     }
 }
 
@@ -123,30 +127,43 @@ header {
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.4s;
+    transition: opacity 1.5s;
 
     .icon {
+        cursor: pointer;
         color: red;
         font-size: 185%;
+        transition: font-size 0.1s;
     }
+
 }
 
 .color-picker {
+    cursor: pointer;
     width: 30px;
     height: 30px;
     border-radius: 3px;
     margin-left: 15px;
     background: linear-gradient(to right, orange, green, rgb(66, 66, 255), violet);
     opacity: 0;
-    transition: opacity 0.4s;
+    transition: opacity 1.5s;
+}
+
+.description-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 300px;
+    margin-left: 45px;
 }
 
 .description {
-    margin-left: 45px;
     width: 300px;
     padding: 3px;
     font-size: 90%;
     transition: width 0.4s;
+    position: absolute;
+    right: 0px;
 }
 
 .task-deadline-container {

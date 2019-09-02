@@ -1,8 +1,8 @@
-import { state } from '../app'
+import { state } from '../state'
 import { SortableItem } from '../Model/SortableItem'
 import { hideItem } from '../View/sortableItemView'
 
-const initSortable = () => {
+const initSortableItems = () => {
     // Create the sortable items
     const sortableItem = SortableItem()
 
@@ -48,4 +48,4 @@ const initSortable = () => {
     // End of code to cancel the drag event when a child element is selected
 }
 
-export { initSortable }
+export { initSortableItems }

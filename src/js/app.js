@@ -1,13 +1,9 @@
 import 'normalize.css/normalize.css';
 import '../scss/styles.scss';
 import interact from 'interactjs';
-import { Sortable } from '@shopify/draggable';
-// To enable the swap animation
-import { Plugins } from '@shopify/draggable';
-
+import { initSortable } from './Controller/sortableItemController'
 import { importImages } from './importImages'
 import { elements } from './elements'
-import { changeHeadingColor } from './Controller/headingController'
 
 // Import something from /src/js/importImages.js so webpack will put the images into /dist/img when building
 importImages()
@@ -23,61 +19,9 @@ const state = {
 	]
 }
 
-// Add event listeners here
 
-
-
-
-
-
-
-
-const sortable = new Sortable(elements.itemsContainer, {
-	draggable: '.item',
-	
-	// Start of additional code to enable animation on sortable:sorted
-	swapAnimation: {
-		duration: 200,
-		easingFunction: 'ease-in-out',
-	},
-	plugins: [Plugins.SwapAnimation]
-	// End of additional code to enable animation on sortable:sorted
-});
-
-sortable.on('sortable:sort', (event) => {
-	// Hides the div that is selected upon selection
-	event.data.dragEvent.data.source.style.opacity = "0"
-});
-
-sortable.on('sortable:stop', () => {
-	console.log('Add code here to adjust state')
-});
-
-// Start of code to cancel the drag event when a child element is selected
-sortable.on('drag:start', (event) => {
-	const currentTarget = event.originalEvent.target;
-	
-	if (isPrevented(currentTarget, ['btn-remove', 'color-picker', 'description','task', 'deadline'])) {
-		event.cancel();
-  }
-});
-
-const isPrevented = (element, classesToPrevent) => {
-	let currentElem = element;
-	let isParent = false;
-	
-	while (currentElem) {
-		const hasClass = Array.from(currentElem.classList).some((cls) => classesToPrevent.includes(cls));
-		if (hasClass) {
-		isParent = true;
-		currentElem = undefined;
-		} else {
-		currentElem = currentElem.parentElement;
-		}
-	}
-	return isParent;
-}
-// End of code to cancel the drag event when a child element is selected
+// Initialize sortable items
+initSortable()
 
 
 
@@ -87,16 +31,17 @@ const updateState = (target) => {
 	console.log('Add code here to update state')
 	console.log(`x-start: ${target.getAttribute('data-x')}`)
 	console.log(`width: ${target.offsetWidth}`)
+	console.log(document.querySelector('.task-deadline-container').offsetWidth)
 }
 
 
 
 
-function dragMoveListener (event) {
-  var target = event.target
+const dragMoveListener = (event) => {
+	let target = event.target
   // keep the dragged position in the data-x/data-y attributes
-  var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
-  var y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
+  let x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
+  let y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy
 
   // translate the element
   target.style.webkitTransform =
@@ -158,9 +103,9 @@ interact('.task')
 		}
   })
   .on('resizemove', function (event) {
-    var target = event.target
-    var x = (parseFloat(target.getAttribute('data-x')) || 0)
-    var y = (parseFloat(target.getAttribute('data-y')) || 0)
+    let target = event.target
+    let x = (parseFloat(target.getAttribute('data-x')) || 0)
+    let y = (parseFloat(target.getAttribute('data-y')) || 0)
 
     // update the element's style
     target.style.width = event.rect.width + 'px'
@@ -191,3 +136,6 @@ interact('.deadline')
 		console.log(`x-start: ${event.target.getAttribute('data-x')}`)
 	}
   })
+
+
+export { state }

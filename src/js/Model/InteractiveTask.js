@@ -1,31 +1,19 @@
 import interact from 'interactjs';
-import { DragMoveListener } from './DragMoveListener'
-
-const updateState = (target) => {
-	console.log('Add code here to update state')
-	console.log(`x-start: ${target.getAttribute('data-x')}`)
-	console.log(`width: ${target.offsetWidth}`)
-	console.log(document.querySelector('.task-deadline-container').offsetWidth)
-}
 
 const InteractiveTask = () => {
     // Define the interactive task
     const task = interact('.task')
-    
-    // Define draggable functionality
+
+    // Define drag properties
     task.draggable({
-        onmove: DragMoveListener,
         modifiers: [
         interact.modifiers.restrictRect({
             restriction: 'parent'
         })
-        ],
-        onend: (event) => {
-            updateState(event.target)
-        }
+        ]
     })
 
-    // Define resizing functionality
+    // Define resize properties
     task.resizable({
         // enable snapping
         snap: {
@@ -55,14 +43,11 @@ const InteractiveTask = () => {
                 width: 20
             },
         },
-        inertia: false,
-        onend: (event) => {
-            updateState(event.target)
-        }
+        inertia: false
     })
 
+    // Return task as a function
     return task
 }
 
 export { InteractiveTask }
-

@@ -1,28 +1,42 @@
 import { InteractiveTask } from '../Model/InteractiveTask'
+import { renderTaskDragMove, renderResizeMove } from '../View/interactiveTaskView'
+
+const updateState = (target) => {
+	console.log('Add code here to update state')
+	console.log(`x-start: ${target.getAttribute('data-x')}`)
+	console.log(`width: ${target.offsetWidth}`)
+	console.log(document.querySelector('.task-deadline-container').offsetWidth)
+}
 
 const initInteractiveTasks = () => {   
 
-    // Define functionality on resize or move
-    InteractiveTask().on('resizemove', (event) => {
-        let target = event.target
-        let x = (parseFloat(target.getAttribute('data-x')) || 0)
-        let y = (parseFloat(target.getAttribute('data-y')) || 0)
-    
-        // update the element's style
-        target.style.width = event.rect.width + 'px'
-        target.style.height = event.rect.height + 'px'
-    
-        // translate when resizing from top or left edges
-        x += event.deltaRect.left
-        y += event.deltaRect.top
-    
-        target.style.webkitTransform = target.style.transform =
-            'translate(' + x + 'px,' + y + 'px)'
-    
-        target.setAttribute('data-x', x)
-        target.setAttribute('data-y', y)
-        // target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
+    const interactiveTask = InteractiveTask()
+
+    // Define functionality on drag
+    interactiveTask.draggable({
+        // Render the drag movement
+        onmove: renderTaskDragMove(),
+
+        // Update the state when drag event is finished
+        onend: (event) => {
+            updateState(event.target)
+        }
     })
+
+    // Define functionality on resize
+    interactiveTask.on('resizemove', (event) => {
+        // Render the resize movement
+        renderResizeMove(event)
+    })
+
+    // Update state when resize event is finished
+    interactiveTask.resizable({
+        onend: (event) => {
+            updateState(event.target)
+        }
+    })
+
+
 }
 
 export { initInteractiveTasks }

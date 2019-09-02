@@ -1,0 +1,51 @@
+$height: 150px;
+$width: 150px; 
+
+.loader {
+    display: block;
+    position: absolute;
+    top: calc(50% - (#{$height} / 2));
+    left: calc(50% - (#{$width} / 2));
+    height: $height;
+    width: $width;
+    border: 3px solid white;
+    border-bottom: 3px solid $loader-blue;
+    border-radius: 50%;
+    animation: animate 1.5s linear infinite;
+}
+
+.loader:before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    border: 3px solid white;
+    border-bottom: 3px solid $loader-green;
+    border-radius: 50%;
+    animation: animate 4s linear infinite;
+}
+
+.loader:after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    bottom: 25px;
+    right: 25px;
+    border: 3px solid white;
+    border-bottom: 3px solid $loader-red;
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -13,105 +13,142 @@
 </head>
 
 <body>
-    <!------------------------------------------------------->
-    <!-------------- HEADER SECTION -------------->
-    <!------------------------------------------------------->
-    <header>
-        <div class="hedaer-item">
-            <div class="hedaer-item__label label-date">27 August</div>
-            <div class="hedaer-item__content content-date">Wednesday</div>
-        </div>
-        <div class="hedaer-item">
-            <div class="hedaer-item__label label-btn">Start time</div>
-            <div class="hedaer-item__content content-btn content-btn__start">
-                <span class="hour">07</span><span class="minutes">.00</span>
-            </div>
-        </div>
-        <div class="hedaer-item">
-            <div class="hedaer-item__label label-btn">End time</div>
-            <div class="hedaer-item__content content-btn content-btn__end">
-                <span class="hour">20</span><span class="minutes">.00</span>
-            </div>
-        </div>
-        <div class="hedaer-item">
-            <div class="hedaer-item__label label-btn">Toggle</div>
-            <div class="hedaer-item__content content-btn content-btn__toggle"><span class="toggle">Set</span></div>
-        </div>
-    </header>
-
-    <div class="main-container">
-        <!------------------------------------------------------->
-        <!-------------- TIMER SECTION -------------->
-        <!------------------------------------------------------->
-        <div class="timer-container">
-            Timer
-        </div>
-        <!------------------------------------------------------->
-        <!-------------- ITEMS SECTION -------------->
-        <!------------------------------------------------------->
-        <div class="items-container">
-            <div class="item">
-                <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
-                <div class="color-picker"></div>
-                <div class="description-container">
-                    <input class="description" type="text">
-                </div>
-                <div class="task-deadline-container">
-                    <div class="task"></div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
-                <div class="color-picker"></div>
-                <div class="description-container">
-                    <input class="description" type="text">
-                </div>
-                <div class="task-deadline-container">
-                    <div class="task"></div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
-                <div class="color-picker"></div>
-                <div class="description-container">
-                    <input class="description" type="text">
-                </div>
-                <div class="task-deadline-container">
-                    <div class="deadline"></div>
-                </div>
-            </div>
-
-            <div class="item">
-                <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
-                <div class="color-picker"></div>
-                <div class="description-container">
-                    <input class="description" type="text">
-                </div>
-                <div class="task-deadline-container">
-                    <div class="task"></div>
-                </div>
-            </div>
-        </div>
-
-        <!------------------------------------------------------->
-        <!-------------- BUTTONS SECTION -------------->
-        <!------------------------------------------------------->
-        <div class="buttons-container">
-            <div>asd</div>
-            <div>asd</div>
-        </div>
+    <div class="loading">
+        <div class="loader"></div>
     </div>
+    
+    <div class="loaded" style="display: none;">
+        <!------------------------------------------------------->
+        <!-------------- HEADER SECTION -------------->
+        <!------------------------------------------------------->
+        <header>
+            <div class="hedaer-item">
+                <div class="hedaer-item__label label-date">27 August</div>
+                <div class="hedaer-item__content content-date">Wednesday</div>
+            </div>
+            <div class="hedaer-item">
+                <div class="hedaer-item__label label-btn">Start time</div>
+                <div class="hedaer-item__content content-btn content-btn__start">
+                    <span class="hour">07</span><span class="minutes">.00</span>
+                </div>
+            </div>
+            <div class="hedaer-item">
+                <div class="hedaer-item__label label-btn">End time</div>
+                <div class="hedaer-item__content content-btn content-btn__end">
+                    <span class="hour">20</span><span class="minutes">.00</span>
+                </div>
+            </div>
+            <div class="hedaer-item">
+                <div class="hedaer-item__label label-btn">Toggle</div>
+                <div class="hedaer-item__content content-btn content-btn__toggle"><span class="toggle">Set</span></div>
+            </div>
+        </header>
 
-    <!------------------------------------------------------->
-    <!-------------- FOOTER SECTION -------------->
-    <!------------------------------------------------------->
-    <footer>
-        <span>By <a href="https://maximerrillees.com/" target="_blank">Maxi Merrillees</a></span>
-    </footer>
+        <div class="main-container">
+            <!------------------------------------------------------->
+            <!-------------- TIMER SECTION -------------->
+            <!------------------------------------------------------->
+            <div class="timer-container">
+                Timer
+            </div>
+            <!------------------------------------------------------->
+            <!-------------- ITEMS SECTION -------------->
+            <!------------------------------------------------------->
+            <div class="items-container">
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="task"></div>
+                    </div>
+                </div>
 
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="task"></div>
+                    </div>
+                </div>
 
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="deadline"></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="task"></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="task"></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="task"></div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
+                    <div class="color-picker"></div>
+                    <div class="description-container">
+                        <input class="description" type="text">
+                    </div>
+                    <div class="task-deadline-container">
+                        <div class="deadline"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------------------------------->
+            <!-------------- BUTTONS SECTION -------------->
+            <!------------------------------------------------------->
+            <div class="buttons-container">
+                <div>asd</div>
+                <div>asd</div>
+            </div>
+        </div>
+
+        <!------------------------------------------------------->
+        <!-------------- FOOTER SECTION -------------->
+        <!------------------------------------------------------->
+        <footer>
+            <span>By <a href="https://maximerrillees.com/" target="_blank">Maxi Merrillees</a></span>
+        </footer>
+    </div>
 </body>
 
 </html>

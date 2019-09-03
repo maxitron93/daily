@@ -1,15 +1,34 @@
 import { state } from '../state'
 
 const updateState = (type) => {
-    if (type === 'task') {
-        console.log('Add Task')
-        console.log(state.items)
-        return {type: 'task', id: 1, xStart: 0.1, width: 0.4, color: 3}
-    } else {
+    let nextId = state.nextId
 
-        console.log('Add Deadline')
+    if (type === 'task') {
+        // Create the new task
+        let newTask = {type: 'task', id: nextId.toString(), xStart: 0.1, width: 0.2, color: 6}
+        
+        // Update the state with the new 
+        state.items.push(newTask)
         console.log(state.items)
-        return {type: 'deadline', id: 2, xStart: 0.5, color: 5}
+
+        // Update state.nextId
+        state.nextId += 1
+        
+        // Return the new task
+        return newTask
+    } else {
+        // Create the new deadline
+        let newDeadline = {type: 'deadline', id: nextId.toString(), xStart: 0.3, color: 7}
+                
+        // Update the state with the new 
+        state.items.push(newDeadline)
+        console.log(state.items)
+
+        // Update state.nextId
+        state.nextId += 1
+
+        // Return the new task
+        return newDeadline
     }
 }
 

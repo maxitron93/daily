@@ -3,6 +3,7 @@ import { InteractiveTask } from './InteractiveTask'
 import { InteractiveDeadline } from './InteractiveDeadline'
 import { initialStateUpdate } from '../Controller/initialLoadController'
 import { removeLoader, renderContent, loadInItemsFromState, removeEmptyItem } from '../View/initialLoadView'
+import { state } from '../state'
 
 const InitialLoad = (items) => {
     // TODO: Update when I hook this up to a backend
@@ -26,6 +27,7 @@ const InitialLoad = (items) => {
         SortableItem()
         InteractiveTask()
         InteractiveDeadline()
+        console.log(state)
     }
 
     // TODO: Update when I hook this up to a backend

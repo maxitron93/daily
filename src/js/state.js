@@ -1,6 +1,7 @@
 // Add state here
 const state = {
-    items: []
+    items: [],
+    nextId: null
 }
 
 export { state }

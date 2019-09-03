@@ -1,4 +1,11 @@
+.item-container {
+    * {
+        outline: none;
+    }
+}
+
 .item {
+    // cursor: move;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -28,6 +35,10 @@
     &:hover .description {
         width: 215px;
     }
+}
+
+.draggable-mirror {
+    z-index: 100;
 }
 
 .btn-remove {

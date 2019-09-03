@@ -3,8 +3,8 @@ import '../scss/styles.scss';
 import { initSortableItems } from './Controller/sortableItemController'
 import { importImages } from './importImages'
 import { elements } from './elements'
-import { initInteractiveTasks } from './Controller/interactiveTaskController'
-import { initInteractiveDeadlines } from './Controller/interactiveDeadlineController'
+import { InteractiveTask } from './Model/InteractiveTask'
+import { InteractiveDeadline } from './Model/InteractiveDeadline'
 import { dummyData } from './dummyData'
 import { initialStateUpdate } from './Controller/initAppController'
 import { removeLoader, renderContent, loadInItemsFromState, removeEmptyItem } from './View/initAppView'
@@ -34,8 +34,8 @@ const initApp = () => {
 
         // Initialize interactive objects
         initSortableItems()
-        initInteractiveTasks()
-        initInteractiveDeadlines()
+        InteractiveTask()
+        InteractiveDeadline()
     }
 
     // TODO: Update when I hook this up to a backend

@@ -1,4 +1,6 @@
 import interact from 'interactjs';
+import { renderTaskDragMove, renderResizeMove } from '../View/interactiveTaskView'
+import { updateState } from '../Controller/interactiveTaskController'
 
 const InteractiveTask = () => {
     // Define the interactive task
@@ -6,11 +8,17 @@ const InteractiveTask = () => {
 
     // Define drag properties
     task.draggable({
+        // Render the drag movement
+        onmove: renderTaskDragMove(), 
         modifiers: [
         interact.modifiers.restrictRect({
             restriction: 'parent'
         })
-        ]
+        ],
+        // Update the state when drag event is finished
+        onend: (event) => {
+            updateState(event.target)
+        }
     })
 
     // Define resize properties
@@ -43,11 +51,15 @@ const InteractiveTask = () => {
                 width: 20
             },
         },
-        inertia: false
+        inertia: false,
+        onend: (event) => {
+            updateState(event.target)
+        }
     })
-
-    // Return task as a function
-    return task
+    .on('resizemove', (event) => {
+        // Render the resize movement
+        renderResizeMove(event)
+    })
 }
 
 export { InteractiveTask }

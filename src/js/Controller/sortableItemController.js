@@ -26,7 +26,7 @@ const updateState = () => {
 
         console.log('State updated with new order of items')
         console.log(state.items)
-    }, 50)
+    }, 200)
 }
 
 // Ccode to cancel the drag event when a child element is selected

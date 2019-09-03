@@ -2,7 +2,7 @@ import { elements } from '../elements'
 
 let containerWidth = elements.taskDeadlineContainer.offsetWidth
 
-// TODO: Add in dynamic color functionality
+// {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3}
 const renderTask = (item) => {
     // Define HTML
     let html = `
@@ -25,9 +25,7 @@ const renderTask = (item) => {
     elements.itemsContainer.insertAdjacentHTML('beforeend', html)
 }
 
-// {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3},
-
-// TODO: Add in dynamic color functionality
+// {type: 'deadline', id: 2, xStart: 0.5, color: 5}
 const renderDeadline = (item) => {
     // Define HTML
     let html = `
@@ -50,6 +48,6 @@ const renderDeadline = (item) => {
     elements.itemsContainer.insertAdjacentHTML('beforeend', html)
 }
 
-// {type: 'deadline', id: 2, xStart: 0.5, color: 5},
+
 
 export { renderTask, renderDeadline }

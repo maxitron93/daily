@@ -98,19 +98,28 @@
 }
 
 .task {
-    font-family: sans-serif;
     border-radius: 2px;
-    touch-action: none;
+    // touch-action: none;
     width: 140px;
     height: 18px;
 }
 
 .deadline {
-    font-family: sans-serif;
     border-radius: 2px;
     touch-action: none;
-    width: 25px;
-    height: 25px;
+    width: 0px;
+    height: 20px;
+
+    &:after {
+        width: 20px;
+        background: inherit;
+        border-radius: 2px;
+        height: 20px;
+        content: "";
+        display: block;
+        position: absolute;
+        transform: translate(-10px)
+    }
 }
 
 .item-color-1 {

@@ -71,6 +71,8 @@
     width: 300px;
     padding: 3px;
     font-size: 90%;
+    border: 1px solid $font-color-main;
+    border-radius: 3px;
     transition: width 0.4s;
     position: absolute;
     right: 0px;

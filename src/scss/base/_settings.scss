@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    text-rendering: optimizeLegibility !important;
     color: $font-color-main; // This is how to import variables from ./base/settings
 }
 

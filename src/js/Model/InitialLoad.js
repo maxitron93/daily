@@ -1,14 +1,10 @@
 import { SortableItem } from './SortableItem'
 import { InteractiveTask } from './InteractiveTask'
 import { InteractiveDeadline } from './InteractiveDeadline'
-import { initialStateUpdate } from '../Controller/initAppController'
-import { removeLoader, renderContent, loadInItemsFromState, removeEmptyItem } from '../View/initAppView'
-import { dummyData } from '../dummyData'
+import { initialStateUpdate } from '../Controller/initialLoadController'
+import { removeLoader, renderContent, loadInItemsFromState, removeEmptyItem } from '../View/initialLoadView'
 
-const initApp = () => {
-    // Get data from backend TODO: Update when I hook this up to a backend
-    const items = dummyData
-    
+const InitialLoad = (items) => {
     // TODO: Update when I hook this up to a backend
     const tempFunc = () => {
         // Update state from incoming data
@@ -33,8 +29,7 @@ const initApp = () => {
     }
 
     // TODO: Update when I hook this up to a backend
-    setTimeout(tempFunc, 2000)
-    
+    setTimeout(tempFunc, 100)
 }
 
-export { initApp }
+export { InitialLoad }

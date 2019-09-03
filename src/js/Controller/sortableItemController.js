@@ -1,8 +1,32 @@
 import { state } from '../state'
+import { elements } from '../elements'
 
 const updateState = () => {
-    console.log('Add code here to adjust state SORTABLE:STOP')
-    console.log(state.items)
+    // Need to pause a little to let the DOM update
+    setTimeout(() => {
+        // Get the items
+        let children = Array.from(elements.itemsContainer.children)
+        let items = children.slice(1, children.length)
+        
+        
+        // Create temporary array
+        let newItemsOrder = []
+
+        // Place the items in the new order into the array
+        items.forEach((newItem, index, array) => {
+            state.items.forEach((item, index, array) => {
+                if (item.id === newItem.id) {
+                    newItemsOrder.push(item)
+                }
+            })
+        })
+
+        // Update the state
+        state.items = newItemsOrder
+
+        console.log('State updated with new order of items')
+        console.log(state.items)
+    }, 50)
 }
 
 // Ccode to cancel the drag event when a child element is selected

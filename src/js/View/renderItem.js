@@ -1,6 +1,5 @@
 import { elements } from '../elements'
-
-let containerWidth = elements.taskDeadlineContainer.offsetWidth
+import { state } from '../state'
 
 // {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3}
 const renderTask = (item) => {
@@ -15,8 +14,8 @@ const renderTask = (item) => {
         <div class="task-deadline-container">
             <div 
                 class="task item-color-${item.color}" 
-                style="transform: translate(${item.xStart * containerWidth}px, 0px); width: ${item.width * containerWidth}px;"
-                data-x="${item.xStart * containerWidth}">
+                style="transform: translate(${item.xStart * state.containerWidth}px, 0px); width: ${item.width * state.containerWidth}px;"
+                data-x="${item.xStart * state.containerWidth}">
             </div>
         </div>
     </div>
@@ -38,8 +37,8 @@ const renderDeadline = (item) => {
         <div class="task-deadline-container">
             <div 
                 class="deadline item-color-${item.color}"
-                style="transform: translate(${item.xStart * containerWidth}px, 0px);" 
-                data-x="${item.xStart * containerWidth}">
+                style="transform: translate(${item.xStart * state.containerWidth}px, 0px);" 
+                data-x="${item.xStart * state.containerWidth}">
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ import { dummyData } from './dummyData'
 import { InitialLoad } from './Model/InitialLoad'
 import { addTask, addDeadline } from './Model/AddItem'
 import { removeItem } from './Model/RemoveItem'
+import { resizeItems } from './Model/ResizeItems'
 
 const initApp = () => {
     // Get data from backend TODO: Update when I hook this up to a backend
@@ -19,7 +20,9 @@ const initApp = () => {
     elements.addTask.addEventListener('click', addTask)
     elements.addDeadline.addEventListener('click', addDeadline)
     elements.itemsContainer.addEventListener('click', removeItem)
+    window.addEventListener('resize', resizeItems)
 }
 
 // Initialize app   
 initApp()
+console.log(elements.taskDeadlineContainer.offsetWidth)

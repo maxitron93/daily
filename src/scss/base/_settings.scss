@@ -6,6 +6,10 @@
     color: $font-color-main; // This is how to import variables from ./base/settings
 }
 
+html {
+    overflow-y: scroll; 
+}
+
 body {
     position: relative;
     font-family: 'Roboto', sans-serif;

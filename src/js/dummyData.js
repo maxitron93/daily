@@ -1,6 +1,6 @@
 const dummyData = [
-    {type: 'task', id: '1', xStart: 0.1, width: 0.4, color: 3},
-    {type: 'deadline', id: '10', xStart: 0.5, color: 5},
+    {type: 'task', id: '1', xStart: 0, width: 0.2, color: 3},
+    {type: 'deadline', id: '10', xStart: 0.18, color: 5},
 ]
 
 export { dummyData }

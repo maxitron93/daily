@@ -1,7 +1,8 @@
 // Add state here
 const state = {
     items: [],
-    nextId: null
+    nextId: null,
+    containerWidth: null
 }
 
 export { state }

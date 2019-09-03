@@ -5,8 +5,7 @@ const updateState = () => {
     // Need to pause a little to let the DOM update
     setTimeout(() => {
         // Get the items
-        let children = Array.from(elements.itemsContainer.children)
-        let items = children.slice(1, children.length)
+        let items = Array.from(elements.itemsContainer.children)
         
         
         // Create temporary array

@@ -4,7 +4,8 @@
     }
 }
 
-.item {
+.item,
+.empty-item {
     // cursor: move;
     display: flex;
     justify-content: flex-start;

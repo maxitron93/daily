@@ -19,9 +19,5 @@ const loadInItemsFromState = (items) => {
     })
 }
 
-const removeEmptyItem = () => {
-    elements.emptyItem.style.display = 'none'
-}
-
 // {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3}
-export { removeLoader, renderContent, loadInItemsFromState, removeEmptyItem }
+export { removeLoader, renderContent, loadInItemsFromState }

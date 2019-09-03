@@ -1,4 +1,5 @@
 import { state } from '../state';
+import { elements } from '../elements'
 
 const initialStateUpdate = (items) => {
     // Load in the items
@@ -10,6 +11,10 @@ const initialStateUpdate = (items) => {
         maxID = parseInt(item.id) > maxID ? parseInt(item.id) : maxID
     })
     state.nextId = maxID + 1
+
+    // Load in the container width
+    let containerWidth = elements.taskDeadlineContainer.offsetWidth
+    state.containerWidth = containerWidth
 }
 
 export { initialStateUpdate }

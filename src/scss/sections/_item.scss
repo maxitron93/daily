@@ -82,8 +82,6 @@
 }
 
 .task {
-    background-color: #29e;
-    color: white;
     font-family: sans-serif;
     border-radius: 2px;
     touch-action: none;
@@ -92,11 +90,41 @@
 }
 
 .deadline {
-    background-color: red;
-    color: white;
     font-family: sans-serif;
     border-radius: 2px;
     touch-action: none;
     width: 25px;
     height: 25px;
+}
+
+.item-color-1 {
+    background-color: $item-color-1
+}
+
+.item-color-2 {
+    background-color: $item-color-2
+}
+
+.item-color-3 {
+    background-color: $item-color-3
+}
+
+.item-color-4 {
+    background-color: $item-color-4
+}
+
+.item-color-5 {
+    background-color: $item-color-5
+}
+
+.item-color-6 {
+    background-color: $item-color-6
+}
+
+.item-color-7 {
+    background-color: $item-color-7
+}
+
+.item-color-8 {
+    background-color: $item-color-8
 }

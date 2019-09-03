@@ -14,7 +14,7 @@ const renderTask = (item) => {
         </div>
         <div class="task-deadline-container">
             <div 
-                class="task" 
+                class="task item-color-${item.color}" 
                 style="transform: translate(${item.xStart * containerWidth}px, 0px); width: ${item.width * containerWidth}px;"
                 data-x="${item.xStart * containerWidth}">
             </div>
@@ -39,7 +39,7 @@ const renderDeadline = (item) => {
         </div>
         <div class="task-deadline-container">
             <div 
-                class="deadline" 
+                class="deadline item-color-${item.color}"
                 style="transform: translate(${item.xStart * containerWidth}px, 0px);" 
                 data-x="${item.xStart * containerWidth}">
             </div>

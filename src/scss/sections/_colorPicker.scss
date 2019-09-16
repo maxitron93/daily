@@ -9,6 +9,8 @@
     margin-left: 15px;
     background: linear-gradient(to right, orange, green, rgb(66, 66, 255), violet);
     opacity: 0;
+    box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow-webkit;
     transition: opacity 1.5s;
     z-index: 300;
 
@@ -18,10 +20,14 @@
         width: 23px;
         height: 23px;
         border-radius: 2px;
+        box-shadow: $box-shadow;
+        -webkit-box-shadow: $box-shadow-webkit;
     }
 
     &:hover {
-        background: $blue-2;
+        background: $blue-1;
+        box-shadow: none;
+        -webkit-box-shadow: none;
         width: 260px;
         cursor: auto;
     }

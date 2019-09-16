@@ -1,9 +1,3 @@
-.item-container {
-    * {
-        outline: none;
-    }
-}
-
 .item {
     // cursor: move;
     display: flex;
@@ -11,7 +5,6 @@
     align-items: center;
     width: 100%;
     height: 50px;
-    outline: none;
     transition: background-color 0.4s;
 
     &:hover {
@@ -43,7 +36,6 @@
     align-items: center;
     width: 100%;
     height: 0px;
-    outline: none;
     opacity: 0;
 }
 
@@ -84,7 +76,6 @@
     font-size: 90%;
     border: 1px solid $font-color-main;
     border-radius: 3px;
-    outline: none;
     transition: width 0.2s;
     position: absolute;
     right: 0px;

@@ -1,0 +1,68 @@
+.color-picker {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 3px;
+    margin-left: 15px;
+    background: linear-gradient(to right, orange, green, rgb(66, 66, 255), violet);
+    opacity: 0;
+    transition: opacity 1.5s;
+    z-index: 300;
+
+    .color {
+        cursor: pointer;
+        display: none;
+        width: 23px;
+        height: 23px;
+        border-radius: 2px;
+    }
+
+    &:hover {
+        background: $blue-2;
+        width: 260px;
+        cursor: auto;
+    }
+
+    &:hover + .description-container {
+        display: none;
+    }
+
+    &:hover .color {
+        display: block;
+    }
+}
+
+.item-color-1 {
+    background-color: $item-color-1
+}
+
+.item-color-2 {
+    background-color: $item-color-2
+}
+
+.item-color-3 {
+    background-color: $item-color-3
+}
+
+.item-color-4 {
+    background-color: $item-color-4
+}
+
+.item-color-5 {
+    background-color: $item-color-5
+}
+
+.item-color-6 {
+    background-color: $item-color-6
+}
+
+.item-color-7 {
+    background-color: $item-color-7
+}
+
+.item-color-8 {
+    background-color: $item-color-8
+}

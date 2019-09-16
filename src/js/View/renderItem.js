@@ -7,7 +7,16 @@ const renderTask = (item) => {
     let html = `
     <div class="item" id="${item.id}">
         <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
-        <div class="color-picker"></div>
+        <div class="color-picker">
+            <div class="color item-color-1"></div>
+            <div class="color item-color-2"></div>
+            <div class="color item-color-3"></div>
+            <div class="color item-color-4"></div>
+            <div class="color item-color-5"></div>
+            <div class="color item-color-6"></div>
+            <div class="color item-color-7"></div>
+            <div class="color item-color-8"></div>
+        </div>
         <div class="description-container">
             <input class="description" type="text">
         </div>
@@ -30,7 +39,16 @@ const renderDeadline = (item) => {
     let html = `
     <div class="item" id="${item.id}">
         <div class="btn-remove"><i class="icon ion-md-close-circle-outline"></i></div>
-        <div class="color-picker"></div>
+        <div class="color-picker">
+            <div class="color item-color-1"></div>
+            <div class="color item-color-2"></div>
+            <div class="color item-color-3"></div>
+            <div class="color item-color-4"></div>
+            <div class="color item-color-5"></div>
+            <div class="color item-color-6"></div>
+            <div class="color item-color-7"></div>
+            <div class="color item-color-8"></div>
+        </div>
         <div class="description-container">
             <input class="description" type="text">
         </div>

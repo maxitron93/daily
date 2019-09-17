@@ -21,23 +21,50 @@ header {
     font-size: 250%;
 }
 
-.content-btn {
-    cursor: pointer;
+.content-list {
+    position: absolute;
+    top: 33px;
     margin-top: 5px;
-    width: 100px;
-    text-align: center;
     border-radius: 2px;
-    background-color: $blue-2;
-    padding: 5px 20px;
     box-shadow: $box-shadow;
     -webkit-box-shadow: $box-shadow-webkit;
-    transition: background-color 0.2s;
+    z-index: 400;
+    display: none;
+}
 
-    .hour {
-        font-size: 150%;
-    }
+.content-btn {
+    margin-top: 5px;
+    border-radius: 2px;
+    box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow-webkit;
+    // display: none;
+}
+
+.content-btn,
+.list-item {
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
+    background-color: $blue-2;
+    padding: 5px 20px;
+    transition: background-color 0.2s;
 
     &:hover {
         background-color: $blue-0;
     }
+}
+
+
+
+.list-item:first-child,
+.list-item:last-child {
+    border-radius: 2px 2px 0 0;
+}
+
+.list-item:last-child {
+    border-radius: 0 0 2px 2px;
+}
+
+.hour {
+    font-size: 150%;
 }

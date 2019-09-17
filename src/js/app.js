@@ -9,6 +9,9 @@ import { addTask, addDeadline } from './Model/AddItem'
 import { removeItem } from './Model/RemoveItem'
 import { resizeItems } from './Model/ResizeItems'
 import { changecolor } from './Model/ChangeColor'
+import { openStartTimeList, closeStartTimeList, selectStartTime } from './Model/StartTimeSelector'
+import { openEndTimeList, closeEndTimeList, selectEndTime } from './Model/EndTimeSelector'
+
 
 const initApp = () => {
     // Get data from backend TODO: Update when I hook this up to a backend
@@ -22,6 +25,12 @@ const initApp = () => {
     elements.addDeadline.addEventListener('click', addDeadline)
     elements.itemsContainer.addEventListener('click', removeItem)
     elements.itemsContainer.addEventListener('click', changecolor)
+    elements.startTimeButton.addEventListener('click', openStartTimeList)
+    document.addEventListener('click', closeStartTimeList)
+    // openStartTimeList
+    // changeStartTime
+    // openEndTimeList
+    // changeEndTime
     window.addEventListener('resize', resizeItems)
 }
 

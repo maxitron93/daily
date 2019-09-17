@@ -30,8 +30,7 @@ const initApp = () => {
     elements.startTimeButton.addEventListener('click', openStartTimeList)
     document.addEventListener('click', closeStartTimeList)
     elements.startTimeList.addEventListener('click', selectStartTime)
-    // openStartTimeList
-    // changeStartTime
+
     // openEndTimeList
     // changeEndTime
     window.addEventListener('resize', resizeItems)

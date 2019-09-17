@@ -2,7 +2,7 @@ import { SortableItem } from './SortableItem'
 import { InteractiveTask } from './InteractiveTask'
 import { InteractiveDeadline } from './InteractiveDeadline'
 import { initialStateUpdate } from '../Controller/initialLoadController'
-import { loadInTimeDivsFromState, loadInItemsFromState, removeLoader, renderContent,  } from '../View/initialLoadView'
+import { loadInTimeDivsFromState, loadInItemsFromState, removeLoader, renderContent, loadInStartTime, loadInEndTime } from '../View/initialLoadView'
 import { state } from '../state'
 
 const InitialLoad = (items) => {
@@ -13,6 +13,12 @@ const InitialLoad = (items) => {
 
         // Render time divs from state
         loadInTimeDivsFromState(state.times)
+
+        // Render start time on start time button
+        loadInStartTime(state.times.start)
+
+        // Render start time on start time button
+        loadInEndTime(state.times.end)
 
         // Render items from state
         loadInItemsFromState(items)

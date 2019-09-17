@@ -2,12 +2,27 @@ import { elements } from '../elements'
 import { state } from '../state'
 import { renderTimeDivs } from './renderTimeDivs'
 
+const convertToString = (startTime) => {
+    if (startTime < 10) {
+        startTime = `0${startTime.toString()}` 
+    } else {
+        startTime = startTime.toString()
+    }
+    return startTime
+}
+
 const hideStartButton = () => {
     // Change opacity to 0
     elements.startTimeButton.style.opacity = 0
 }
 
 const showStartList = () => {
+    // Get the current start time
+    let currentStartTime = convertToString(state.times.start)
+
+    // Change first list item to current state
+    elements.startTimeList.querySelector('.hour').innerHTML = currentStartTime
+
     // Change display from none to block
     elements.startTimeList.style.display = 'block'
 }
@@ -41,14 +56,7 @@ const getStartTime = (target) => {
 
 const renderStartTime = () => {
     // Get start time from state
-    let startTime = state.times.start
-
-    // Turn that start time into a string
-    if (startTime < 10) {
-        startTime = `0${startTime.toString()}` 
-    } else {
-        startTime = startTime.toString()
-    }
+    let startTime = convertToString(state.times.start)
 
     // Render the new start time
     elements.startTimeButton.querySelector('.hour').innerHTML = startTime

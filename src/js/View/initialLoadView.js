@@ -25,5 +25,34 @@ const renderContent = () => {
     elements.loadedContent.style.opacity = '1'
 }
 
+const loadInStartTime = (startTime) => {
+    // Turn that start time into a string
+    if (startTime < 10) {
+        startTime = `0${startTime.toString()}` 
+    } else {
+        startTime = startTime.toString()
+    }
+    // Render the new start time
+    elements.startTimeButton.querySelector('.hour').innerHTML = startTime
+}
+
+const loadInEndTime = (endTime) => {
+    // Turn that start time into a string
+    if (endTime < 10) {
+        endTime = `0${endTime.toString()}` 
+    } else {
+        endTime = endTime.toString()
+    }
+    // Render the new end time
+    elements.endTimeButton.querySelector('.hour').innerHTML = endTime
+}
+
 // {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3}
-export { loadInTimeDivsFromState, loadInItemsFromState, removeLoader, renderContent }
+export { 
+    loadInTimeDivsFromState, 
+    loadInItemsFromState, 
+    removeLoader, 
+    renderContent, 
+    loadInStartTime, 
+    loadInEndTime 
+}

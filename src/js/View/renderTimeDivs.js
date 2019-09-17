@@ -1,6 +1,11 @@
 import { elements } from '../elements'
 
 const renderTimeDivs = (times) => {
+    // Remove old time divs
+    while (elements.timesContainer.hasChildNodes()) {
+        elements.timesContainer.removeChild(elements.timesContainer.lastChild);
+    }
+
     // Get the number of divs
     let numDivs = times.end - times.start
     

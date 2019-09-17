@@ -1,4 +1,6 @@
-import { hideStartButton, showStartList, hideStartList, showStartButton } from '../View/startTimeSelectorView'
+import { hideStartButton, showStartList, hideStartList, showStartButton, getStartTime, renderStartTime, renderNewTimeDivs } from '../View/startTimeSelectorView'
+import { updateStartTime } from '../Controller/startTimeSelectorController'
+import { state } from '../state'
 
 const openStartTimeList = () => {
     // Hide button
@@ -21,15 +23,28 @@ const closeStartTimeList = (event) => {
     } 
 }
 
-const selectStartTime = () => {
-    if(target.className.split(' ').includes('start-list-area')) {
-        console.log(target)
-    }
+const selectStartTime = (event) => {
+    // Get the clicked button
+    let target = event.target
+    let startTime = null
+
+    // Get the start time
+    startTime = getStartTime(target)
+
     // Update start time state
+    updateStartTime(startTime)
 
-    // Hude list
+    // Render new start time
+    renderStartTime()
 
-    // Show button with new start time from state
+    // Hide list
+    hideStartList()
+
+    // Show start button
+    showStartButton()
+
+    // Render new time divs
+    renderNewTimeDivs()
 }
 
 export { openStartTimeList, closeStartTimeList, selectStartTime }

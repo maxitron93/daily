@@ -25,8 +25,11 @@ const initApp = () => {
     elements.addDeadline.addEventListener('click', addDeadline)
     elements.itemsContainer.addEventListener('click', removeItem)
     elements.itemsContainer.addEventListener('click', changecolor)
+
+    // For changing start time
     elements.startTimeButton.addEventListener('click', openStartTimeList)
     document.addEventListener('click', closeStartTimeList)
+    elements.startTimeList.addEventListener('click', selectStartTime)
     // openStartTimeList
     // changeStartTime
     // openEndTimeList

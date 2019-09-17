@@ -3,11 +3,11 @@ import { state } from '../state'
 const updateState = (target) => {
 	// Get the updated position
 	let nominalPosition = parseInt(target.getAttribute('data-x'))
-    let newPosition = Math.floor(nominalPosition / state.containerWidth * 1000) / 1000
+    let newPosition = nominalPosition / state.containerWidth
 
 	// Get the updated width
 	let nominalWidth = parseInt(target.offsetWidth)
-	let newWidth = Math.floor(nominalWidth / state.containerWidth * 1000) / 1000
+	let newWidth = nominalWidth / state.containerWidth
 
 	// Get the target id
 	let id = target.parentNode.parentNode.id
@@ -17,6 +17,7 @@ const updateState = (target) => {
         if (item.id === id) {
             return {
                 type: item.type,
+                description: item.description,
                 id: item.id,
 				xStart: newPosition,
 				width: newWidth,

@@ -1,5 +1,5 @@
-import { hideStartButton, showStartList, hideStartList, showStartButton, getStartTime, renderStartTime, renderNewTimeDivs } from '../View/startTimeSelectorView'
-import { updateStartTime } from '../Controller/startTimeSelectorController'
+import { hideStartButton, showStartList, hideStartList, showStartButton, getStartTime, renderStartTime, renderNewTimeDivs, renderUpdatedItems } from '../View/startTimeSelectorView'
+import { updateStartTime, updateItemWidths, updateStartingPosition } from '../Controller/startTimeSelectorController'
 
 const openStartTimeList = () => {
     // Hide button
@@ -25,16 +25,28 @@ const closeStartTimeList = (event) => {
 const selectStartTime = (event) => {
     // Get the clicked button
     let target = event.target
-    let startTime = null
+    let newStartTime = null
 
     // Get the start time
-    startTime = getStartTime(target)
+    newStartTime = getStartTime(target)
+
+    // Update items in state with new widths
+    updateItemWidths(newStartTime)
+
+    // Update items in state with new starting position
+    updateStartingPosition(newStartTime)
 
     // Update start time state
-    updateStartTime(startTime)
+    updateStartTime(newStartTime)
+
+    // Render new time divs
+    renderNewTimeDivs()
 
     // Render new start time
     renderStartTime()
+
+    // Render items with new starting position and width
+    renderUpdatedItems()
 
     // Hide list
     hideStartList()
@@ -42,8 +54,7 @@ const selectStartTime = (event) => {
     // Show start button
     showStartButton()
 
-    // Render new time divs
-    renderNewTimeDivs()
+    
 }
 
 export { openStartTimeList, closeStartTimeList, selectStartTime }

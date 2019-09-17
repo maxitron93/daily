@@ -47,7 +47,7 @@ const loadInEndTime = (endTime) => {
     elements.endTimeButton.querySelector('.hour').innerHTML = endTime
 }
 
-// {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3}
+// {type: 'task', description: '', id: 1, xStart: 0, width: 0.1, color: 3}
 export { 
     loadInTimeDivsFromState, 
     loadInItemsFromState, 

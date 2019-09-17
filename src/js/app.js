@@ -36,7 +36,6 @@ const initApp = () => {
     elements.endTimeButton.addEventListener('click', openEndTimeList)
     document.addEventListener('click', closeEndTimeList)
     elements.endTimeList.addEventListener('click', selectEndTime)
-    
 }
 
 // Initialize app   

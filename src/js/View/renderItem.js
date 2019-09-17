@@ -1,7 +1,7 @@
 import { elements } from '../elements'
 import { state } from '../state'
 
-// {type: 'task', id: 1, xStart: 0, width: 0.1, color: 3}
+// {type: 'task', description: '', id: 1, xStart: 0, width: 0.1, color: 3}
 const renderTask = (item) => {
     // Define HTML
     let html = `
@@ -18,7 +18,7 @@ const renderTask = (item) => {
             <div class="color item-color-8"></div>
         </div>
         <div class="description-container">
-            <input class="description" type="text">
+            <input class="description" type="text" value="${item.description}">
         </div>
         <div class="task-deadline-container">
             <div 
@@ -33,7 +33,7 @@ const renderTask = (item) => {
     elements.itemsContainer.insertAdjacentHTML('beforeend', html)
 }
 
-// {type: 'deadline', id: 2, xStart: 0.5, color: 5}
+// {type: 'deadline', description: '', id: 2, xStart: 0.5, color: 5}
 const renderDeadline = (item) => {
     // Define HTML
     let html = `
@@ -50,7 +50,7 @@ const renderDeadline = (item) => {
             <div class="color item-color-8"></div>
         </div>
         <div class="description-container">
-            <input class="description" type="text">
+            <input class="description" type="text" value="${item.description}">
         </div>
         <div class="task-deadline-container">
             <div 

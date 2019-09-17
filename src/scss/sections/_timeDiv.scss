@@ -11,10 +11,8 @@
 .time-div {
     border-right: 1px solid $time-div-border;
     height: 100%;
-    flex-grow: 1;
     text-align: right;
     font-size: 70%;
-    
 
     p {
         display: inline-block;
@@ -28,7 +26,10 @@
     }
 }
 
+.time-div:not(:first-child) {
+    flex: 1 1 0px;
+}
+
 .time-div:first-child {
-    flex-grow: 0;
     width: 315px;
 }

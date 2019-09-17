@@ -3,7 +3,7 @@ const state = {
     containerWidth: null,
     times: {
         start: 8,
-        end: 17
+        end: 20
     },
     items: [],
     nextId: null

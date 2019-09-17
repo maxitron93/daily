@@ -26,7 +26,7 @@ const InteractiveTask = () => {
         // enable snapping
         snap: {
             targets: [
-                interact.createSnapGrid({ x: 2, y: 2 })
+                interact.createSnapGrid({ x: 1, y: 1 })
             ],
             range: Infinity,
             relativePoints: [ { x: 0, y: 0 } ]

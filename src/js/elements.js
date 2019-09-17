@@ -3,7 +3,7 @@ const elements = {
     startTimeButton: document.querySelector('.content-btn__start'),
     startTimeList: document.querySelector('.content-list__start'),
     endTimeButton: document.querySelector('.content-btn__end'),
-    endTimeList: document.querySelector('content-list__end'),
+    endTimeList: document.querySelector('.content-list__end'),
     emptyItem: document.querySelector('.empty-item'),
     timesContainer: document.querySelector('.times-container'),
     itemsContainer: document.querySelector('.items-container'),

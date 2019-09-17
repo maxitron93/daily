@@ -1,6 +1,5 @@
 import { hideStartButton, showStartList, hideStartList, showStartButton, getStartTime, renderStartTime, renderNewTimeDivs } from '../View/startTimeSelectorView'
 import { updateStartTime } from '../Controller/startTimeSelectorController'
-import { state } from '../state'
 
 const openStartTimeList = () => {
     // Hide button

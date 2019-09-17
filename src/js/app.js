@@ -25,15 +25,18 @@ const initApp = () => {
     elements.addDeadline.addEventListener('click', addDeadline)
     elements.itemsContainer.addEventListener('click', removeItem)
     elements.itemsContainer.addEventListener('click', changecolor)
+    window.addEventListener('resize', resizeItems)
 
     // For changing start time
     elements.startTimeButton.addEventListener('click', openStartTimeList)
     document.addEventListener('click', closeStartTimeList)
     elements.startTimeList.addEventListener('click', selectStartTime)
 
-    // openEndTimeList
-    // changeEndTime
-    window.addEventListener('resize', resizeItems)
+    // For changing end time
+    elements.endTimeButton.addEventListener('click', openEndTimeList)
+    document.addEventListener('click', closeEndTimeList)
+    elements.endTimeList.addEventListener('click', selectEndTime)
+    
 }
 
 // Initialize app   

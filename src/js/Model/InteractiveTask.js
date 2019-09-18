@@ -48,7 +48,7 @@ const InteractiveTask = () => {
         // minimum size
         restrictSize: {
             min: { 
-                width: 20
+                width: 5
             },
         },
         inertia: false,

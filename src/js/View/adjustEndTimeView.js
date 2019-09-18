@@ -3,25 +3,25 @@ import { state } from '../state'
 import { renderTimeDivs } from './renderTimeDivs'
 import { renderUpdatedItem } from './renderUpdatedItem'
 
-const convertToString = (startTime) => {
-    if (startTime < 10) {
-        startTime = `0${startTime.toString()}` 
+const convertToString = (endTime) => {
+    if (endTime < 10) {
+        endTime = `0${endTime.toString()}` 
     } else {
-        startTime = startTime.toString()
+        endTime = endTime.toString()
     }
-    return startTime
+    return endTime
 }
 
 const renderNewTimeDivs = () => {
     renderTimeDivs(state.times)
 }
 
-const renderStartTime = () => {
-    // Get start time from state
-    let startTime = convertToString(state.times.start)
+const renderEndTime = () => {
+    // Get end time from state
+    let endTime = convertToString(state.times.end)
 
-    // Render the new start time
-    elements.startTime.querySelector('.hour').innerHTML = startTime
+    // Render the new end time
+    elements.endTime.querySelector('.hour').innerHTML = endTime
 }
 
 const renderUpdatedItems = () => {
@@ -32,15 +32,15 @@ const renderUpdatedItems = () => {
 }
 
 const cannotAdjust = () => {
-    elements.startTime.style.backgroundColor = '#FCB0B3'
+    elements.endTime.style.backgroundColor = '#FCB0B3'
     setTimeout(() => {
-        elements.startTime.style.backgroundColor = '#B5CEED'
+        elements.endTime.style.backgroundColor = '#B5CEED'
     }, 100)
 }
 
 export {
     renderNewTimeDivs,
-    renderStartTime,
+    renderEndTime,
     renderUpdatedItems,
     cannotAdjust
 }

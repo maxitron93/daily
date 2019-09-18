@@ -9,8 +9,6 @@ import { addTask, addDeadline } from './Model/AddItem'
 import { removeItem } from './Model/RemoveItem'
 import { resizeItems } from './Model/ResizeItems'
 import { changecolor } from './Model/ChangeColor'
-import { openStartTimeList, closeStartTimeList, selectStartTime } from './Model/StartTimeSelector'
-import { openEndTimeList, closeEndTimeList, selectEndTime } from './Model/EndTimeSelector'
 import { adjustStartTime } from './Model/AdjustStartTime'
 import { adjustEndTime } from './Model/AdjustEndTime'
 
@@ -35,9 +33,9 @@ const initApp = () => {
     // elements.startTimeList.addEventListener('click', selectStartTime)
 
     // For changing end time
-    elements.endTimeButton.addEventListener('click', openEndTimeList)
-    document.addEventListener('click', closeEndTimeList)
-    elements.endTimeList.addEventListener('click', selectEndTime)
+    // elements.endTimeButton.addEventListener('click', openEndTimeList)
+    // document.addEventListener('click', closeEndTimeList)
+    // elements.endTimeList.addEventListener('click', selectEndTime)
 
     // For changing start time
     elements.increaseStartTime.addEventListener('click', adjustStartTime)

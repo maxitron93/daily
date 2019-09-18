@@ -1,6 +1,6 @@
 import { state } from '../state'
 import { updateItemWidths, updateStartingPosition, updateStartTime } from '../Controller/adjustStartTimeController'
-import { renderNewTimeDivs, renderStartTime, renderUpdatedItems } from '../View/adjustStartTimeView.js'
+import { renderNewTimeDivs, renderStartTime, renderUpdatedItems, cannotAdjust } from '../View/adjustStartTimeView.js'
 
 const adjustStartTime = (event) => {
     // Get the clicked button
@@ -9,9 +9,19 @@ const adjustStartTime = (event) => {
 
     // Get the start time
     if (target.className.split(' ')[1] === 'btn-inc') {
-        newStartTime = state.times.start + 1    
+        if (state.times.start < 12) {
+            newStartTime = state.times.start + 1
+        } else {
+            cannotAdjust()
+            return
+        }
     } else {
-        newStartTime = state.times.start - 1
+        if (state.times.start > 0) {
+            newStartTime = state.times.start - 1
+        } else {
+            cannotAdjust()
+            return
+        }
     }
     
     // Update items in state with new widths

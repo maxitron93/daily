@@ -38,8 +38,8 @@ const updateStartingPosition = (newStartTime) => {
             // Update the item width
             item.width = item.width + item.xStart
 
-            // If the task totally dissapears, change the width to 15 minutes
-            if (item.width < 0) {
+            // If the task is less than 15 minutes, change the width to 15 minutes
+            if (item.width < (1 / newNumHours) / 4) {
                 item.width = (1 / newNumHours) / 4
             }
 

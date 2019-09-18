@@ -33,7 +33,7 @@ const loadInStartTime = (startTime) => {
         startTime = startTime.toString()
     }
     // Render the new start time
-    elements.startTimeButton.querySelector('.hour').innerHTML = startTime
+    elements.startTime.querySelector('.hour').innerHTML = startTime
 }
 
 const loadInEndTime = (endTime) => {
@@ -44,7 +44,7 @@ const loadInEndTime = (endTime) => {
         endTime = endTime.toString()
     }
     // Render the new end time
-    elements.endTimeButton.querySelector('.hour').innerHTML = endTime
+    elements.endTime.querySelector('.hour').innerHTML = endTime
 }
 
 // {type: 'task', description: '', id: 1, xStart: 0, width: 0.1, color: 3}

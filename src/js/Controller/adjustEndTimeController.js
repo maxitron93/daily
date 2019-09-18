@@ -1,14 +1,9 @@
 import { state } from '../state'
 
-const updateEndTime = (newEndTime) => {
-    // Update the end time state
-    state.times.end = parseInt(newEndTime)
-}
-
 const updateItemWidths = (newEndTime) => {
     // Get the values needed to calculate new starting positions
     let oldNumHours = state.times.end - state.times.start
-    let newNumHours = parseInt(newEndTime) - state.times.start
+    let newNumHours = newEndTime - state.times.start
 
     // Update the items
     let updatedItems = state.items.map((item, index, array) => {
@@ -37,7 +32,7 @@ const updateItemWidths = (newEndTime) => {
 const updateStartingPosition = (newEndTime) => {
     // Get the values needed to calculate new starting positions
     let oldNumHours = state.times.end - state.times.start
-    let newNumHours = parseInt(newEndTime) - state.times.start
+    let newNumHours = newEndTime - state.times.start
 
     // Update items
     let updatedItems = state.items.map((item, index, array) => {
@@ -50,7 +45,6 @@ const updateStartingPosition = (newEndTime) => {
                 item.xStart = 1
             } else {
                 item.xStart = 1 - ((1 / newNumHours) / 4)
-                console.log(item.xStart)
                 item.width = (1 / newNumHours) / 4
             }
         }
@@ -62,12 +56,21 @@ const updateStartingPosition = (newEndTime) => {
 
         // Return the updated task
         return item
-        
     })
+
+    // Update the state
+    state.items = updatedItems
 }
 
-export { 
-    updateEndTime, 
-    updateItemWidths, 
-    updateStartingPosition 
+const updateEndTime = (newEndTime) => {
+    // Update the end time state
+    state.times.end = newEndTime
+}
+
+
+
+export {
+    updateItemWidths,
+    updateStartingPosition,
+    updateEndTime
 }

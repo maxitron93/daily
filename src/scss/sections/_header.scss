@@ -2,11 +2,11 @@ header {
     display: flex;
     align-items: flex-start;
     background-color: $blue-1;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .hedaer-item {
-    margin: 15px 25px;
+    margin: 15px 5px;
 }
 
 .label-date {
@@ -19,6 +19,24 @@ header {
 
 .content-date {
     font-size: 250%;
+}
+
+.btn-inc-dec {
+    cursor: pointer;
+    color: #fff;
+    background-color: $blue-dark;
+    margin-top: 44px;
+    font-size: 150%;
+    text-align: center;
+    border-radius: 2px;
+    height: 27px;
+    width: 27px;
+    box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow-webkit;
+}
+
+.btn-dec {
+    margin-left: 40px;
 }
 
 .content-list {
@@ -35,9 +53,6 @@ header {
 .content-btn {
     margin-top: 5px;
     border-radius: 2px;
-    box-shadow: $box-shadow;
-    -webkit-box-shadow: $box-shadow-webkit;
-    // display: none;
 }
 
 .content-btn,

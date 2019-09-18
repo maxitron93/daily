@@ -11,6 +11,8 @@ import { resizeItems } from './Model/ResizeItems'
 import { changecolor } from './Model/ChangeColor'
 import { openStartTimeList, closeStartTimeList, selectStartTime } from './Model/StartTimeSelector'
 import { openEndTimeList, closeEndTimeList, selectEndTime } from './Model/EndTimeSelector'
+import { adjustStartTime } from './Model/AdjustStartTime'
+import { adjustEndTime } from './Model/AdjustEndTime'
 
 
 const initApp = () => {
@@ -36,6 +38,14 @@ const initApp = () => {
     elements.endTimeButton.addEventListener('click', openEndTimeList)
     document.addEventListener('click', closeEndTimeList)
     elements.endTimeList.addEventListener('click', selectEndTime)
+
+    // For changing start time
+    elements.increaseStartTime.addEventListener('click', adjustStartTime)
+    elements.decreaseStartTime.addEventListener('click', adjustStartTime)
+    elements.decreaseEndTime.addEventListener('click', adjustEndTime)
+    elements.increaseEndTime.addEventListener('click', adjustEndTime)
+
+    // For changing end time
 }
 
 // Initialize app   

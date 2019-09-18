@@ -11,6 +11,10 @@ const elements = {
     taskDeadlineContainer: document.querySelector('.task-deadline-container'),
     addTask: document.querySelector('.btn-add-task'),
     addDeadline: document.querySelector('.btn-add-deadline'),
+    increaseStartTime: document.querySelector('.btn-inc-start'),
+    decreaseStartTime: document.querySelector('.btn-dec-start'),
+    increaseEndTime: document.querySelector('.btn-inc-end'),
+    decreaseEndTime: document.querySelector('.btn-dec-end')
 }
 
 export { elements }

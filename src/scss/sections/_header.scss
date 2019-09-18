@@ -33,6 +33,17 @@ header {
     width: 27px;
     box-shadow: $box-shadow;
     -webkit-box-shadow: $box-shadow-webkit;
+    transition: color 0.2s, background-color 0.2s;
+
+    &:hover {
+        color: $font-color-main;
+        background-color: $blue-2;
+    }
+
+    &:active {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    }
 }
 
 .btn-dec {
@@ -57,16 +68,10 @@ header {
 
 .content-btn,
 .list-item {
-    cursor: pointer;
     width: 100px;
     text-align: center;
     background-color: $blue-2;
     padding: 5px 20px;
-    transition: background-color 0.2s;
-
-    &:hover {
-        background-color: $blue-0;
-    }
 }
 
 

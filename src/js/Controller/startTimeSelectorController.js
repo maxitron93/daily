@@ -1,8 +1,8 @@
 import { state } from '../state'
 
-const updateStartTime = (startTime) => {
+const updateStartTime = (newStartTime) => {
     // Update the start time state
-    state.times.start = parseInt(startTime)
+    state.times.start = parseInt(newStartTime)
 }
 
 const updateStartingPosition = (newStartTime) => {

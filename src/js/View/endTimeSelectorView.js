@@ -1,6 +1,7 @@
 import { elements } from '../elements'
 import { state } from '../state'
 import { renderTimeDivs } from './renderTimeDivs'
+import { renderUpdatedItem } from './renderUpdatedItem'
 
 const convertToString = (endTime) => {
     if (endTime < 10) {
@@ -66,4 +67,20 @@ const renderNewTimeDivs = () => {
     renderTimeDivs(state.times)
 }
 
-export { hideEndButton, showEndList, hideEndList, showEndButton, getEndTime, renderEndTime, renderNewTimeDivs }
+const renderUpdatedItems = () => {
+    // Render the updated position and dimention for each item
+    state.items.forEach((item, array, index) => {
+        renderUpdatedItem(item)
+    })
+}
+
+export { 
+    hideEndButton, 
+    showEndList, 
+    hideEndList, 
+    showEndButton, 
+    getEndTime, 
+    renderEndTime, 
+    renderNewTimeDivs, 
+    renderUpdatedItems 
+}

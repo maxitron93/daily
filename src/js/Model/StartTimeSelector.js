@@ -53,8 +53,6 @@ const selectStartTime = (event) => {
 
     // Show start button
     showStartButton()
-
-    
 }
 
 export { openStartTimeList, closeStartTimeList, selectStartTime }

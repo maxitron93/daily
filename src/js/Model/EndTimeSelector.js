@@ -1,5 +1,5 @@
-import { hideEndButton, showEndList, hideEndList, showEndButton, getEndTime, renderEndTime, renderNewTimeDivs } from '../View/endTimeSelectorView'
-import { updateEndTime } from '../Controller/endTimeSelectorController'
+import { hideEndButton, showEndList, hideEndList, showEndButton, getEndTime, renderEndTime, renderNewTimeDivs, renderUpdatedItems } from '../View/endTimeSelectorView'
+import { updateEndTime, updateItemWidths, updateStartingPosition } from '../Controller/endTimeSelectorController'
 
 const openEndTimeList = () => {
     // Hide button
@@ -25,25 +25,34 @@ const closeEndTimeList = (event) => {
 const selectEndTime = (event) => {
     // Get the clicked button
     let target = event.target
-    let endTime = null
+    let newEndTime = null
 
     // Get the end time
-    endTime = getEndTime(target)
+    newEndTime = getEndTime(target)
+
+    // Update items in state with new widths
+    updateItemWidths(newEndTime)
+
+    // Update items in state with new starting position
+    updateStartingPosition(newEndTime)
 
     // Update end time state
-    updateEndTime(endTime)
+    updateEndTime(newEndTime)
+
+    // Render new time divs
+    renderNewTimeDivs()
 
     // Render new end time
     renderEndTime()
+
+    // Render items with new starting position and width
+    renderUpdatedItems()
 
     // Hide list
     hideEndList()
 
     // Show end button
     showEndButton()
-
-    // Render new time divs
-    renderNewTimeDivs()
 }
 
 export { openEndTimeList, closeEndTimeList, selectEndTime }

@@ -5,7 +5,7 @@ const updateState = (type) => {
 
     if (type === 'task') {
         // Create the new task
-        let newTask = {type: 'task', description: '', id: nextId.toString(), xStart: 0, width: 0.2, color: 6}
+        let newTask = {type: 'task', description: '', id: nextId.toString(), xStart: 0, width: 0.2, color: 3}
         
         // Update the state with the new 
         state.items.push(newTask)

@@ -7,7 +7,6 @@ const updateState = () => {
         // Get the items
         let items = Array.from(elements.itemsContainer.children)
         
-        
         // Create temporary array
         let newItemsOrder = []
 

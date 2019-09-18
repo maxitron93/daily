@@ -29,7 +29,7 @@ const initApp = () => {
 
     // For changing start time
     elements.startTimeButton.addEventListener('click', openStartTimeList)
-    document.addEventListener('click', closeStartTimeList)
+    document.addEventListener('click', closeStartTimeList)  
     elements.startTimeList.addEventListener('click', selectStartTime)
 
     // For changing end time

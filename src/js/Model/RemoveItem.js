@@ -1,6 +1,6 @@
 import { checkNumItems, updateState } from '../Controller/removeItemController'
 import { removeItemFromUI } from '../View/removeItemView'
-import { state } from '../state'
+import { updateStorage } from '../Controller/updateStorage';
 
 const removeItem = (event) => {
     // Get target and classes
@@ -21,7 +21,8 @@ const removeItem = (event) => {
             updateState(id)
         }
     
-        console.log(state.items)
+        // Update local storage
+        updateStorage()
     }
 }
 

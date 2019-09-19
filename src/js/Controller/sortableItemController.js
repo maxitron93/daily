@@ -1,5 +1,6 @@
 import { state } from '../state'
 import { elements } from '../elements'
+import { updateStorage } from './updateStorage';
 
 const updateState = () => {
     // Need to pause a little to let the DOM update
@@ -22,8 +23,9 @@ const updateState = () => {
         // Update the state
         state.items = newItemsOrder
 
-        console.log(state.items)
-    }, 200)
+        // Update local storage
+        updateStorage()
+    }, 100)
 }
 
 // Ccode to cancel the drag event when a child element is selected

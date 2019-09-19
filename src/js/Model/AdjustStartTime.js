@@ -1,6 +1,7 @@
 import { state } from '../state'
 import { updateItemWidths, updateStartingPosition, updateStartTime } from '../Controller/adjustStartTimeController'
 import { renderNewTimeDivs, renderStartTime, renderUpdatedItems, cannotAdjust } from '../View/adjustStartTimeView.js'
+import { updateStorage } from '../Controller/updateStorage';
 
 const adjustStartTime = (event) => {
     // Get the clicked button
@@ -42,7 +43,8 @@ const adjustStartTime = (event) => {
     // Render items with new starting position and width
     renderUpdatedItems()
 
-    console.log(state.times)
+    // Update local storage
+    updateStorage()
 }
 
 export { adjustStartTime }

@@ -16,10 +16,10 @@ import { changeDescription } from './Model/ChangeDescription'
 
 const initApp = () => {
     // Get data from backend TODO: Update when I hook this up to a backend
-    const items = dummyData
+    const data = JSON.parse(window.localStorage.getItem('appData')) || dummyData
 
     // Perform initial load
-    InitialLoad(items)
+    InitialLoad(data)
 
     // Add event listeners
     elements.addTask.addEventListener('click', addTask)
@@ -43,4 +43,3 @@ const initApp = () => {
 
 // Initialize app   
 initApp()
-console.log(elements.taskDeadlineContainer.offsetWidth)

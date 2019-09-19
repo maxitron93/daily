@@ -1,35 +1,33 @@
 import { state } from '../state'
+import { updateStorage } from './updateStorage'
 
 const updateState = (type) => {
     let nextId = state.nextId
+    let newItem = {}
 
     if (type === 'task') {
         // Create the new task
-        let newTask = {type: 'task', description: '', id: nextId.toString(), xStart: 0, width: 0.2, color: 3}
-        
-        // Update the state with the new 
-        state.items.push(newTask)
-        console.log(state.items)
+        newItem = {type: 'task', description: '', id: nextId.toString(), xStart: 0, width: 0.2, color: 3}
 
         // Update state.nextId
         state.nextId += 1
-        
-        // Return the new task
-        return newTask
     } else {
         // Create the new deadline
-        let newDeadline = {type: 'deadline', description: '', id: nextId.toString(), xStart: 0.2, color: 7}
-                
-        // Update the state with the new 
-        state.items.push(newDeadline)
-        console.log(state.items)
+        newItem = {type: 'deadline', description: '', id: nextId.toString(), xStart: 0.2, color: 7}
 
         // Update state.nextId
         state.nextId += 1
-
-        // Return the new task
-        return newDeadline
     }
+
+    // Update the state with the new item
+    state.items.push(newItem)
+
+    // Update local storage
+    updateStorage()
+
+    // Return the new item
+    return newItem
 }
 
 export { updateState }
+

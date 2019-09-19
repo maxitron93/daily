@@ -1,4 +1,6 @@
 import { state } from '../state'
+import { updateStorage } from './updateStorage';
+
 
 const updateState = (target) => {
 	// Get the updated position
@@ -31,7 +33,8 @@ const updateState = (target) => {
 	// Update the state
     state.items = updatedItems
 
-    console.log(state.items)
+    // Update local storage
+    updateStorage()
 }
 
 export { updateState }

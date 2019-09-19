@@ -1,6 +1,6 @@
 import { getColor, renderNewColor } from '../View/changeColorView'
 import { updateItemColor } from '../Controller/changeColorController'
-import { state } from '../state'
+import { updateStorage } from '../Controller/updateStorage';
 
 const changecolor = (event) => {
     // Get target and classes
@@ -19,7 +19,8 @@ const changecolor = (event) => {
         // Render the new color in the view
         renderNewColor(id, type, color)
 
-        console.log(state.items)
+        // Update local storage
+        updateStorage()
     }    
 }
 

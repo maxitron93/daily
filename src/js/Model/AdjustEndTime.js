@@ -1,6 +1,7 @@
 import { state } from '../state'
 import { updateItemWidths, updateStartingPosition, updateEndTime } from '../Controller/adjustEndTimeController'
 import { renderNewTimeDivs, renderEndTime, renderUpdatedItems, cannotAdjust } from '../View/adjustEndTimeView'
+import { updateStorage } from '../Controller/updateStorage';
 
 const adjustEndTime = (event) => {
         // Get the clicked button
@@ -42,7 +43,8 @@ const adjustEndTime = (event) => {
         // Render items with new starting position and width
         renderUpdatedItems()
 
-        console.log(state.times)
+        // Update local storage
+        updateStorage()
 }
 
 export { adjustEndTime }

@@ -1,11 +1,10 @@
-import { state } from '../state'
 import { updateState } from '../Controller/changeDescriptionController'
+import { updateStorage } from '../Controller/updateStorage';
 
 
 const changeDescription = (event) => {
     // Get the target
     let target = event.target
-    // console.log(target.className)
 
     if (target.className === 'description') {
         // Get the new desciption
@@ -15,7 +14,8 @@ const changeDescription = (event) => {
         // Update the description in state
         updateState(newDescription, id)
 
-        console.log(state.items)
+        // Update local storage
+        updateStorage()
     }
 }
 

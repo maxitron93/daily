@@ -5,11 +5,11 @@ import { initialStateUpdate } from '../Controller/initialLoadController'
 import { loadInTimeDivsFromState, loadInItemsFromState, removeLoader, renderContent, loadInStartTime, loadInEndTime, renderDate } from '../View/initialLoadView'
 import { state } from '../state'
 
-const InitialLoad = (items) => {
+const InitialLoad = (data) => {
     // TODO: Update when I hook this up to a backend
     const tempFunc = () => {
         // Update state from incoming data
-        initialStateUpdate(items)
+        initialStateUpdate(data)
 
         // Render time divs from state
         loadInTimeDivsFromState(state.times)
@@ -21,7 +21,7 @@ const InitialLoad = (items) => {
         loadInEndTime(state.times.end)
 
         // Render items from state
-        loadInItemsFromState(items)
+        loadInItemsFromState(data.items)
 
         // Render today's date
         renderDate()
@@ -32,17 +32,14 @@ const InitialLoad = (items) => {
         // Change opacity of content from 0 to 1
         renderContent()
 
-        
-
         // Initialize interactive objects
         SortableItem()
         InteractiveTask()
         InteractiveDeadline()
-        console.log(state)
     }
 
     // TODO: Update when I hook this up to a backend
-    setTimeout(tempFunc, 1839)
+    setTimeout(tempFunc, 183)
 }
 
 export { InitialLoad }

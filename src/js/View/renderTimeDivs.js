@@ -19,7 +19,6 @@ const renderTimeDivs = (times) => {
         
         // Insert the html
         elements.timesContainer.insertAdjacentHTML('beforeend', html)
-        // console.log()
     }
 }
 

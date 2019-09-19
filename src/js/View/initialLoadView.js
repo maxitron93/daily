@@ -50,7 +50,7 @@ const loadInEndTime = (endTime) => {
 const renderDate = () => {
     // Define month and week names
     let monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
-    let dayName = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    let dayName = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     let today = new Date()
 
     // Get today's day and date

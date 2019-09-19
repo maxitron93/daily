@@ -3,9 +3,10 @@ import '../scss/styles.scss';
 import { importImages } from './importImages'
 importImages() // Import something from /src/js/importImages.js so webpack will put the images into /dist/img when building
 import { elements } from './elements'
-import { dummyData } from './dummyData'
+import { defaultData } from './defaultData'
 import { InitialLoad } from './Model/InitialLoad'
 import { addTask, addDeadline } from './Model/AddItem'
+import { resetData } from './Model/ResetData'
 import { removeItem } from './Model/RemoveItem'
 import { resizeItems } from './Model/ResizeItems'
 import { changecolor } from './Model/ChangeColor'
@@ -16,7 +17,7 @@ import { changeDescription } from './Model/ChangeDescription'
 
 const initApp = () => {
     // Get data from backend TODO: Update when I hook this up to a backend
-    const data = JSON.parse(window.localStorage.getItem('appData')) || dummyData
+    const data = JSON.parse(window.localStorage.getItem('appData')) || defaultData
 
     // Perform initial load
     InitialLoad(data)
@@ -27,7 +28,7 @@ const initApp = () => {
     elements.itemsContainer.addEventListener('click', removeItem)
     elements.itemsContainer.addEventListener('click', changecolor)
     elements.itemsContainer.addEventListener('change', changeDescription)
-
+    elements.resetButton.addEventListener('click', resetData)
 
     // For changing start time
     elements.increaseStartTime.addEventListener('click', adjustStartTime)

@@ -14,10 +14,10 @@ const InitialLoad = (data) => {
         // Render time divs from state
         loadInTimeDivsFromState(state.times)
 
-        // Render start time on start time button
+        // Render start time
         loadInStartTime(state.times.start)
 
-        // Render start time on start time button
+        // Render end time
         loadInEndTime(state.times.end)
 
         // Render items from state
@@ -39,7 +39,7 @@ const InitialLoad = (data) => {
     }
 
     // TODO: Update when I hook this up to a backend
-    setTimeout(tempFunc, 183)
+    setTimeout(tempFunc, 1239)
 }
 
 export { InitialLoad }

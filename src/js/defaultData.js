@@ -1,8 +1,8 @@
-const dummyData = {
+const defaultData = {
     containerWidth: null,
     times: {
         start: 8,
-        end: 20
+        end: 18
     },
     items: [
         {type: 'task', description: 'First Task', id: '1', xStart: 0, width: 0.2, color: 3},
@@ -13,4 +13,4 @@ const dummyData = {
     nextId: 5
 }
 
-export { dummyData }
+export { defaultData }

@@ -2,7 +2,7 @@ import { SortableItem } from './SortableItem'
 import { InteractiveTask } from './InteractiveTask'
 import { InteractiveDeadline } from './InteractiveDeadline'
 import { initialStateUpdate } from '../Controller/initialLoadController'
-import { loadInTimeDivsFromState, loadInItemsFromState, removeLoader, renderContent, loadInStartTime, loadInEndTime } from '../View/initialLoadView'
+import { loadInTimeDivsFromState, loadInItemsFromState, removeLoader, renderContent, loadInStartTime, loadInEndTime, renderDate } from '../View/initialLoadView'
 import { state } from '../state'
 
 const InitialLoad = (items) => {
@@ -23,11 +23,16 @@ const InitialLoad = (items) => {
         // Render items from state
         loadInItemsFromState(items)
 
+        // Render today's date
+        renderDate()
+
         // Remove loader from UI
         removeLoader()
 
         // Change opacity of content from 0 to 1
         renderContent()
+
+        
 
         // Initialize interactive objects
         SortableItem()
@@ -37,7 +42,7 @@ const InitialLoad = (items) => {
     }
 
     // TODO: Update when I hook this up to a backend
-    setTimeout(tempFunc, 100)
+    setTimeout(tempFunc, 1839)
 }
 
 export { InitialLoad }

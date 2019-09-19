@@ -47,6 +47,24 @@ const loadInEndTime = (endTime) => {
     elements.endTime.querySelector('.hour').innerHTML = endTime
 }
 
+const renderDate = () => {
+    // Define month and week names
+    let monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    let dayName = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    let today = new Date()
+
+    // Get today's day and date
+    let date = today.getDate()
+    let month = monthName[today.getMonth()]
+    let day = dayName[today.getDay()]
+
+    // Render the date 
+    elements.date.innerHTML = `${date} ${month}`
+
+    // Render the dat
+    elements.day.innerHTML = day
+}
+
 // {type: 'task', description: '', id: 1, xStart: 0, width: 0.1, color: 3}
 export { 
     loadInTimeDivsFromState, 
@@ -54,5 +72,6 @@ export {
     removeLoader, 
     renderContent, 
     loadInStartTime, 
-    loadInEndTime 
+    loadInEndTime,
+    renderDate
 }

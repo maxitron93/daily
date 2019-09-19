@@ -1,5 +1,7 @@
 const elements = {
     loader: document.querySelector('.loader'),
+    date: document.querySelector('.label-date'),
+    day: document.querySelector('.content-date'),
     startTime: document.querySelector('.content-btn__start'),
     increaseStartTime: document.querySelector('.btn-inc-start'),
     decreaseStartTime: document.querySelector('.btn-dec-start'),

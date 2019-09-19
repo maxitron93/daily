@@ -41,6 +41,8 @@ const adjustStartTime = (event) => {
 
     // Render items with new starting position and width
     renderUpdatedItems()
+
+    console.log(state.times)
 }
 
 export { adjustStartTime }

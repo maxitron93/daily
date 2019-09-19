@@ -10,9 +10,6 @@ const updateState = (id) => {
     state.items = state.items.filter((item, index, array) => {
         return item.id !== id
     })
-
-    console.log('State updated without removed item')
-    console.log(state.items)
 }
 
 export { checkNumItems, updateState }

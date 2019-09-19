@@ -31,7 +31,6 @@ const updateState = (target) => {
 	// Update the state
     state.items = updatedItems
 
-    console.log('State updated with new task position and width')
     console.log(state.items)
 }
 

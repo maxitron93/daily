@@ -22,7 +22,6 @@ const updateState = () => {
         // Update the state
         state.items = newItemsOrder
 
-        console.log('State updated with new order of items')
         console.log(state.items)
     }, 200)
 }

@@ -18,8 +18,9 @@ const changecolor = (event) => {
 
         // Render the new color in the view
         renderNewColor(id, type, color)
-    }
 
+        console.log(state.items)
+    }    
 }
 
 export { changecolor }

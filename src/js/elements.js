@@ -6,10 +6,10 @@ const elements = {
     endTime: document.querySelector('.content-btn__end'),
     increaseEndTime: document.querySelector('.btn-inc-end'),
     decreaseEndTime: document.querySelector('.btn-dec-end'),
-    emptyItem: document.querySelector('.empty-item'),
     timesContainer: document.querySelector('.times-container'),
     itemsContainer: document.querySelector('.items-container'),
     loadedContent: document.querySelector('.loaded-content'),
+    emptyItem: document.querySelector('.empty-item'),
     taskDeadlineContainer: document.querySelector('.task-deadline-container'),
     addTask: document.querySelector('.btn-add-task'),
     addDeadline: document.querySelector('.btn-add-deadline')

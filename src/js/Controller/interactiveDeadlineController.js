@@ -26,7 +26,6 @@ const updateState = (target) => {
     // Update the state
     state.items = updatedItems
 
-    console.log('State updated with new deadline position')
     console.log(state.items)
 }
 

@@ -1,5 +1,6 @@
 import { checkNumItems, updateState } from '../Controller/removeItemController'
 import { removeItemFromUI } from '../View/removeItemView'
+import { state } from '../state'
 
 const removeItem = (event) => {
     // Get target and classes
@@ -19,6 +20,8 @@ const removeItem = (event) => {
             // Update the state
             updateState(id)
         }
+    
+        console.log(state.items)
     }
 }
 

@@ -11,6 +11,7 @@ import { resizeItems } from './Model/ResizeItems'
 import { changecolor } from './Model/ChangeColor'
 import { adjustStartTime } from './Model/AdjustStartTime'
 import { adjustEndTime } from './Model/AdjustEndTime'
+import { changeDescription } from './Model/ChangeDescription'
 
 
 const initApp = () => {
@@ -25,17 +26,8 @@ const initApp = () => {
     elements.addDeadline.addEventListener('click', addDeadline)
     elements.itemsContainer.addEventListener('click', removeItem)
     elements.itemsContainer.addEventListener('click', changecolor)
-    window.addEventListener('resize', resizeItems)
+    elements.itemsContainer.addEventListener('change', changeDescription)
 
-    // For changing start time
-    // elements.startTimeButton.addEventListener('click', openStartTimeList)
-    // document.addEventListener('click', closeStartTimeList)  
-    // elements.startTimeList.addEventListener('click', selectStartTime)
-
-    // For changing end time
-    // elements.endTimeButton.addEventListener('click', openEndTimeList)
-    // document.addEventListener('click', closeEndTimeList)
-    // elements.endTimeList.addEventListener('click', selectEndTime)
 
     // For changing start time
     elements.increaseStartTime.addEventListener('click', adjustStartTime)
@@ -45,7 +37,8 @@ const initApp = () => {
     elements.decreaseEndTime.addEventListener('click', adjustEndTime)
     elements.increaseEndTime.addEventListener('click', adjustEndTime)
 
-    // For changing end time
+    // For updating item positions and widths if the screen gets resized
+    window.addEventListener('resize', resizeItems)
 }
 
 // Initialize app   

@@ -11,6 +11,7 @@ html {
     overflow-y: scroll; 
     -webkit-user-select: none; // Stops divs being highlighted on double click
     -moz-user-select: none; // Stops divs being highlighted on double click
+    min-width: 1000px;
 }
 
 body {
